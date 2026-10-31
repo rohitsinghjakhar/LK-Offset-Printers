@@ -1,0 +1,457 @@
+{
+  "license": "Pexels License",
+  "licenseUrl": "https://www.pexels.com/license/",
+  "verifiedOn": "2026-10-31",
+  "usage": "Illustrative stock photography for printing services. These photographs do not depict L.K. Offset Printers premises, employees, completed client work, or endorsements.",
+  "processing": "Downloaded from Pexels, resized and compressed locally as WebP with Sharp; no generated imagery or retouching.",
+  "images": [
+    {
+      "file": "printing-press.webp",
+      "author": "Erik Mclean",
+      "source": "https://www.pexels.com/photo/vintage-printing-machine-in-modern-typography-4140915/",
+      "download": "https://images.pexels.com/photos/4140915/pexels-photo-4140915.jpeg",
+      "description": "Traditional printing press in a workshop; illustrative printing photograph.",
+      "width": 1067,
+      "height": 1600,
+      "bytes": 122880
+    },
+    {
+      "file": "printing-workshop.webp",
+      "author": "Antoni Shkraba",
+      "source": "https://www.pexels.com/photo/man-working-with-printing-tools-using-machinery-6621000/",
+      "download": "https://images.pexels.com/photos/6621000/pexels-photo-6621000.jpeg",
+      "description": "Operator working at a traditional printing press; illustrative stock, not an L.K. employee.",
+      "width": 1400,
+      "height": 933,
+      "bytes": 86490
+    },
+    {
+      "file": "business-cards.webp",
+      "author": "MARINA LU",
+      "source": "https://www.pexels.com/photo/a-stack-of-blank-business-cards-10932011/",
+      "download": "https://images.pexels.com/photos/10932011/pexels-photo-10932011.jpeg",
+      "description": "Blank business card stock arranged on a wooden surface.",
+      "width": 867,
+      "height": 1300,
+      "bytes": 23148
+    },
+    {
+      "file": "wedding-invitations.webp",
+      "author": "Tara Winstead",
+      "source": "https://www.pexels.com/photo/invitation-card-with-the-inscription-tied-with-ribbon-6479559/",
+      "download": "https://images.pexels.com/photos/6479559/pexels-photo-6479559.jpeg",
+      "description": "Invitation stationery with a ribbon; illustrative design inspiration.",
+      "width": 1100,
+      "height": 733,
+      "bytes": 95220
+    },
+    {
+      "file": "books-binding.webp",
+      "author": "Olha Ruskykh",
+      "source": "https://www.pexels.com/photo/close-up-photo-of-stack-of-hardbound-books-5984591/",
+      "download": "https://images.pexels.com/photos/5984591/pexels-photo-5984591.jpeg",
+      "description": "Stack of hardbound books illustrating paper and binding.",
+      "width": 1100,
+      "height": 743,
+      "bytes": 17864
+    },
+    {
+      "file": "paper-bags.webp",
+      "author": "Ivan Xolod",
+      "source": "https://www.pexels.com/photo/paper-bags-on-white-background-8557942/",
+      "download": "https://images.pexels.com/photos/8557942/pexels-photo-8557942.jpeg",
+      "description": "Plain kraft paper shopping bags illustrating packaging materials.",
+      "width": 867,
+      "height": 1300,
+      "bytes": 23494
+    },
+    {
+      "file": "colour-swatches.webp",
+      "author": "cottonbro studio",
+      "source": "https://www.pexels.com/photo/a-spread-of-paint-color-swatches-6583367/",
+      "download": "https://images.pexels.com/photos/6583367/pexels-photo-6583367.jpeg",
+      "description": "Fanned colour swatches illustrating colour selection.",
+      "width": 867,
+      "height": 1300,
+      "bytes": 29444
+    },
+    {
+      "file": "paper-stock.webp",
+      "author": "Nothing Ahead",
+      "source": "https://www.pexels.com/photo/close-up-shot-of-colored-papers-on-a-black-surface-7457657/",
+      "download": "https://images.pexels.com/photos/7457657/pexels-photo-7457657.jpeg",
+      "description": "Layered sheets of coloured paper on a dark surface.",
+      "width": 1100,
+      "height": 733,
+      "bytes": 20308
+    },
+    {
+      "file": "digital-printing.webp",
+      "author": "George Milton",
+      "source": "https://www.pexels.com/photo/woman-printing-photos-on-paper-at-home-7014413/",
+      "download": "https://images.pexels.com/photos/7014413/pexels-photo-7014413.jpeg",
+      "description": "Paper being loaded into a desktop digital printer.",
+      "width": 867,
+      "height": 1300,
+      "bytes": 42204
+    },
+    {
+      "file": "printed-mug.webp",
+      "author": "RDNE Stock project",
+      "source": "https://www.pexels.com/photo/white-ceramic-mug-with-text-7005032/",
+      "download": "https://images.pexels.com/photos/7005032/pexels-photo-7005032.jpeg",
+      "description": "White ceramic mug printed with a BEST DAD message; illustrative gift printing.",
+      "width": 1100,
+      "height": 733,
+      "bytes": 11366
+    },
+    {
+      "file": "printed-tshirts.webp",
+      "author": "BANDAR BAANT",
+      "source": "https://www.pexels.com/photo/casual-oversized-white-t-shirt-with-bold-print-36908588/",
+      "download": "https://images.pexels.com/photos/36908588/pexels-photo-36908588.jpeg",
+      "description": "A white T-shirt with a typographic print worn by a model; illustrative apparel printing.",
+      "width": 867,
+      "height": 1300,
+      "bytes": 35694
+    },
+    {
+      "file": "kraft-packaging.webp",
+      "author": "Alina Vilchenko",
+      "source": "https://www.pexels.com/photo/stack-of-cardboard-boxes-14557897/",
+      "download": "https://images.pexels.com/photos/14557897/pexels-photo-14557897.jpeg",
+      "description": "Cylindrical kraft packaging with decorative printed labels; illustrative packaging design.",
+      "width": 867,
+      "height": 1300,
+      "bytes": 59140
+    },
+    {
+      "file": "packaging-cartons.webp",
+      "author": "Ksenia Chernaya",
+      "source": "https://www.pexels.com/photo/stack-of-carton-boxes-on-table-5691655/",
+      "download": "https://images.pexels.com/photos/5691655/pexels-photo-5691655.jpeg",
+      "description": "Stacked cardboard cartons illustrating packaging materials.",
+      "width": 868,
+      "height": 1300,
+      "bytes": 19328
+    },
+    {
+      "file": "shop-signage.webp",
+      "author": "Markus Winkler",
+      "source": "https://www.pexels.com/photo/close-up-of-a-signage-12100414/",
+      "download": "https://images.pexels.com/photos/12100414/pexels-photo-12100414.jpeg",
+      "description": "An OPEN WELCOME sign illustrating shop signage.",
+      "width": 867,
+      "height": 1300,
+      "bytes": 66122
+    },
+    {
+      "file": "product-labels.webp",
+      "author": "Polina",
+      "source": "https://www.pexels.com/photo/white-and-brown-bottles-on-white-textile-8100691/",
+      "download": "https://images.pexels.com/photos/8100691/pexels-photo-8100691.jpeg",
+      "description": "Cosmetic bottles with plain white labels illustrating product packaging.",
+      "width": 1100,
+      "height": 826,
+      "bytes": 34254
+    },
+    {
+      "file": "screen-printing.webp",
+      "author": "HONG SON",
+      "source": "https://www.pexels.com/photo/a-woman-is-working-on-a-screen-printing-machine-27893026/",
+      "download": "https://images.pexels.com/photos/27893026/pexels-photo-27893026.jpeg",
+      "description": "A person screen printing in a workshop; illustrative stock, not an L.K. employee.",
+      "width": 1100,
+      "height": 733,
+      "bytes": 57510
+    },
+    {
+      "file": "flex-banner.webp",
+      "source": "https://www.pexels.com/photo/12883028/",
+      "download": "https://images.pexels.com/photos/12883028/pexels-photo-12883028.jpeg",
+      "description": "Blank banner mounted on a brick wall, illustrating flex and banner printing.",
+      "width": 1100,
+      "height": 733,
+      "bytes": 63694
+    },
+    {
+      "file": "photo-prints.webp",
+      "source": "https://www.pexels.com/photo/7014415/",
+      "download": "https://images.pexels.com/photos/7014415/pexels-photo-7014415.jpeg",
+      "description": "Photo prints coming out of a printer.",
+      "width": 733,
+      "height": 1100,
+      "bytes": 39504
+    },
+    {
+      "file": "bill-book.webp",
+      "source": "https://www.pexels.com/photo/5900135/",
+      "download": "https://images.pexels.com/photos/5900135/pexels-photo-5900135.jpeg",
+      "description": "Receipts and a calculator on a desk, illustrating bill and invoice books.",
+      "width": 733,
+      "height": 1100,
+      "bytes": 39852
+    },
+    {
+      "file": "rubber-stamp.webp",
+      "source": "https://www.pexels.com/photo/6358840/",
+      "download": "https://images.pexels.com/photos/6358840/pexels-photo-6358840.jpeg",
+      "description": "A hand pressing a rubber stamp onto paper.",
+      "width": 1100,
+      "height": 733,
+      "bytes": 23340
+    },
+    {
+      "file": "id-cards.webp",
+      "source": "https://www.pexels.com/photo/8761297/",
+      "download": "https://images.pexels.com/photos/8761297/pexels-photo-8761297.jpeg",
+      "description": "Lanyards with ID card holders at an event.",
+      "width": 734,
+      "height": 1100,
+      "bytes": 54766
+    },
+    {
+      "file": "posters.webp",
+      "source": "https://www.pexels.com/photo/10600740/",
+      "download": "https://images.pexels.com/photos/10600740/pexels-photo-10600740.jpeg",
+      "description": "Printed posters on a wall.",
+      "width": 733,
+      "height": 1100,
+      "bytes": 59982
+    },
+    {
+      "file": "table-tent.webp",
+      "source": "https://www.pexels.com/photo/32910863/",
+      "download": "https://images.pexels.com/photos/32910863/pexels-photo-32910863.jpeg",
+      "description": "Menu cards in a wooden holder on a cafe table.",
+      "width": 1100,
+      "height": 733,
+      "bytes": 33122
+    },
+    {
+      "file": "event-standee.webp",
+      "source": "https://www.pexels.com/photo/35138560/",
+      "download": "https://images.pexels.com/photos/35138560/pexels-photo-35138560.jpeg",
+      "description": "An exhibition hall with stands and display boards.",
+      "width": 1100,
+      "height": 733,
+      "bytes": 95540
+    },
+    {
+      "file": "canvas-prints.webp",
+      "source": "https://www.pexels.com/photo/19920120/",
+      "download": "https://images.pexels.com/photos/19920120/pexels-photo-19920120.jpeg",
+      "description": "Canvas prints laid out outdoors.",
+      "width": 733,
+      "height": 1100,
+      "bytes": 150804
+    },
+    {
+      "file": "event-stationery.webp",
+      "source": "https://www.pexels.com/photo/8245196/",
+      "download": "https://images.pexels.com/photos/8245196/pexels-photo-8245196.jpeg",
+      "description": "Wedding menu and place cards.",
+      "width": 734,
+      "height": 1100,
+      "bytes": 78504
+    },
+    {
+      "file": "hang-tags.webp",
+      "source": "https://www.pexels.com/photo/9594096/",
+      "download": "https://images.pexels.com/photos/9594096/pexels-photo-9594096.jpeg",
+      "description": "Printed clothing hang tags on a flat surface.",
+      "width": 923,
+      "height": 1100,
+      "bytes": 27900
+    },
+    {
+      "file": "exam-papers.webp",
+      "source": "https://www.pexels.com/photo/6683394/",
+      "download": "https://images.pexels.com/photos/6683394/pexels-photo-6683394.jpeg",
+      "description": "Exam papers and a pencil on a classroom desk.",
+      "width": 1100,
+      "height": 733,
+      "bytes": 28848
+    },
+    {
+      "file": "certificate.webp",
+      "source": "https://www.pexels.com/photo/8177922/",
+      "download": "https://images.pexels.com/photos/8177922/pexels-photo-8177922.jpeg",
+      "description": "A printed certificate of achievement with a rolled diploma.",
+      "width": 1100,
+      "height": 735,
+      "bytes": 29662
+    },
+    {
+      "file": "notebooks.webp",
+      "source": "https://www.pexels.com/photo/273034/",
+      "download": "https://images.pexels.com/photos/273034/pexels-photo-273034.jpeg",
+      "description": "A stack of coloured spiral notebooks.",
+      "width": 1100,
+      "height": 728,
+      "bytes": 60200
+    },
+    {
+      "file": "spiral-binding.webp",
+      "source": "https://www.pexels.com/photo/36552177/",
+      "download": "https://images.pexels.com/photos/36552177/pexels-photo-36552177.jpeg",
+      "description": "A comb/spiral binding machine in an office.",
+      "width": 733,
+      "height": 1100,
+      "bytes": 38774
+    },
+    {
+      "file": "calendar.webp",
+      "source": "https://www.pexels.com/photo/29509502/",
+      "download": "https://images.pexels.com/photos/29509502/pexels-photo-29509502.jpeg",
+      "description": "A spiral-bound desk calendar.",
+      "width": 1100,
+      "height": 733,
+      "bytes": 10362
+    },
+    {
+      "file": "keychains.webp",
+      "source": "https://www.pexels.com/photo/35101964/",
+      "download": "https://images.pexels.com/photos/35101964/pexels-photo-35101964.jpeg",
+      "description": "Painted wooden keychains.",
+      "width": 826,
+      "height": 1100,
+      "bytes": 40568
+    },
+    {
+      "file": "photo-frame.webp",
+      "source": "https://www.pexels.com/photo/8861589/",
+      "download": "https://images.pexels.com/photos/8861589/pexels-photo-8861589.jpeg",
+      "description": "Framed photos on a glass table.",
+      "width": 1100,
+      "height": 733,
+      "bytes": 30434
+    },
+    {
+      "file": "cushions.webp",
+      "source": "https://www.pexels.com/photo/34772403/",
+      "download": "https://images.pexels.com/photos/34772403/pexels-photo-34772403.jpeg",
+      "description": "Decorative printed cushions on a sofa.",
+      "width": 720,
+      "height": 1100,
+      "bytes": 110638
+    },
+    {
+      "file": "lamination.webp",
+      "source": "https://www.pexels.com/photo/7694980/",
+      "download": "https://images.pexels.com/photos/7694980/pexels-photo-7694980.jpeg",
+      "description": "Coloured paper sheets illustrating laminated documents.",
+      "width": 734,
+      "height": 1100,
+      "bytes": 70228
+    },
+    {
+      "file": "real-estate.webp",
+      "source": "https://www.pexels.com/photo/8293715/",
+      "download": "https://images.pexels.com/photos/8293715/pexels-photo-8293715.jpeg",
+      "description": "Miniature wooden house with keys, illustrating real-estate printing.",
+      "width": 1100,
+      "height": 733,
+      "bytes": 33780
+    },
+    {
+      "file": "corporate-branding.webp",
+      "source": "https://www.pexels.com/photo/7598009/",
+      "download": "https://images.pexels.com/photos/7598009/pexels-photo-7598009.jpeg",
+      "description": "Branding materials and stationery laid out on a desk.",
+      "width": 1100,
+      "height": 735,
+      "bytes": 45712
+    },
+    {
+      "file": "clinic-reception.webp",
+      "source": "https://www.pexels.com/photo/6627900/",
+      "download": "https://images.pexels.com/photos/6627900/pexels-photo-6627900.jpeg",
+      "description": "A clinic corridor with a staff member at the front desk; illustrative healthcare photo.",
+      "width": 1100,
+      "height": 733,
+      "bytes": 17116
+    },
+    {
+      "file": "machine-offset.webp",
+      "source": "https://www.pexels.com/photo/9550363/",
+      "download": "https://images.pexels.com/photos/9550363/pexels-photo-9550363.jpeg",
+      "description": "Sheet-fed offset printing machine running printed sheets.",
+      "width": 1100,
+      "height": 825,
+      "bytes": 77554
+    },
+    {
+      "file": "machine-digital.webp",
+      "source": "https://www.pexels.com/photo/17235421/",
+      "download": "https://images.pexels.com/photos/17235421/pexels-photo-17235421.jpeg",
+      "description": "A person operating a digital printer/copier.",
+      "width": 1100,
+      "height": 734,
+      "bytes": 18396
+    },
+    {
+      "file": "machine-large-format.webp",
+      "source": "https://www.pexels.com/photo/40241484/",
+      "download": "https://images.pexels.com/photos/40241484/pexels-photo-40241484.jpeg",
+      "description": "Large-format printer printing a wide poster.",
+      "width": 1100,
+      "height": 733,
+      "bytes": 61254
+    },
+    {
+      "file": "machine-laser.webp",
+      "source": "https://www.pexels.com/photo/7254428/",
+      "download": "https://images.pexels.com/photos/7254428/pexels-photo-7254428.jpeg",
+      "description": "CNC laser engraving a wooden piece.",
+      "width": 1100,
+      "height": 733,
+      "bytes": 68348
+    },
+    {
+      "file": "machine-heat-press.webp",
+      "source": "https://www.pexels.com/photo/33650428/",
+      "download": "https://images.pexels.com/photos/33650428/pexels-photo-33650428.jpeg",
+      "description": "A heat press transferring a print onto a T-shirt.",
+      "width": 733,
+      "height": 1100,
+      "bytes": 30208
+    },
+    {
+      "file": "step-design.webp",
+      "source": "https://www.pexels.com/photo/9281786/",
+      "download": "https://images.pexels.com/photos/9281786/pexels-photo-9281786.jpeg",
+      "description": "Graphic design software open on a laptop.",
+      "width": 734,
+      "height": 1100,
+      "bytes": 40794
+    },
+    {
+      "file": "step-whatsapp.webp",
+      "source": "https://www.pexels.com/photo/4132538/",
+      "download": "https://images.pexels.com/photos/4132538/pexels-photo-4132538.jpeg",
+      "description": "Hand holding a phone with WhatsApp open.",
+      "width": 1100,
+      "height": 733,
+      "bytes": 19962
+    },
+    {
+      "file": "step-printing.webp",
+      "source": "https://www.pexels.com/photo/19837529/",
+      "download": "https://images.pexels.com/photos/19837529/pexels-photo-19837529.jpeg",
+      "description": "Rollers of an offset printing press.",
+      "width": 1100,
+      "height": 825,
+      "bytes": 49652
+    },
+    {
+      "file": "step-delivery.webp",
+      "source": "https://www.pexels.com/photo/6699397/",
+      "download": "https://images.pexels.com/photos/6699397/pexels-photo-6699397.jpeg",
+      "description": "A courier handing a parcel to a customer.",
+      "width": 1100,
+      "height": 733,
+      "bytes": 35150
+    }
+  ]
+}

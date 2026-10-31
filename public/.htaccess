@@ -1,0 +1,44 @@
+# L.K. Offset Printers — Apache settings (Hostinger, GoDaddy, any cPanel host).
+# Upload the contents of out/ (including this file) to public_html/. Other hosts ignore it.
+
+Options -Indexes
+DirectorySlash On
+ErrorDocument 404 /404.html
+
+# Uncomment once the domain has an SSL certificate, to send every visitor to https://www.
+# <IfModule mod_rewrite.c>
+#   RewriteEngine On
+#   RewriteCond %{HTTPS} off [OR]
+#   RewriteCond %{HTTP_HOST} !^www\. [NC]
+#   RewriteRule ^ https://www.lkprinters.in%{REQUEST_URI} [L,R=301]
+# </IfModule>
+
+<IfModule mod_mime.c>
+  AddType application/manifest+json .webmanifest
+  AddType image/svg+xml .svg
+  AddType font/woff2 .woff2
+  AddCharset utf-8 .html .css .js .json .txt .xml .webmanifest
+</IfModule>
+
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml application/javascript application/json application/xml application/manifest+json image/svg+xml
+</IfModule>
+
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), interest-cohort=()"
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains" "expr=%{HTTPS} == 'on'"
+
+  # Hashed build files never change: cache for a year. Pages are re-checked on every visit.
+  <FilesMatch "\.(js|css|woff2)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  <FilesMatch "\.(webp|png|svg|ico)$">
+    Header set Cache-Control "public, max-age=2592000"
+  </FilesMatch>
+  <FilesMatch "\.(html|txt|xml|webmanifest)$">
+    Header set Cache-Control "public, max-age=0, must-revalidate"
+  </FilesMatch>
+</IfModule>

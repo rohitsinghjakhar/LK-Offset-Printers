@@ -1,0 +1,806 @@
+@import "tailwindcss";
+
+/* ───────────────────────── Design tokens ───────────────────────── */
+@theme {
+  --color-*: initial;
+  --color-paper: #f6f3ec;
+  --color-paper-2: #ece6d8;
+  --color-ink: #0e0e10;
+  --color-ink-2: #1b1b20;
+  --color-ink-muted: #5e5a53;
+  --color-paper-muted: #b9b3a6;
+  --color-line: rgb(14 14 16 / 0.12);
+  --color-line-ink: rgb(246 243 236 / 0.14);
+  --color-cyan: #00aeef;
+  --color-magenta: #ec008c;
+  --color-magenta-deep: #b8006c;
+  --color-yellow: #ffe500;
+  --color-green: #00a651;
+  --color-red: #ed1c24;
+  --color-blue: #2e3192;
+  --color-success: #1f9d55;
+  --color-danger: #d92d20;
+  --color-white: #ffffff;
+  --color-foil: #c9a14a;
+
+  --font-*: initial;
+  --font-display: var(--font-bricolage), "Arial Narrow", system-ui, sans-serif;
+  --font-serif: var(--font-instrument), Georgia, "Times New Roman", serif;
+  --font-sans: var(--font-geist), system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, "SFMono-Regular", Menlo, monospace;
+
+  --text-display: clamp(3.25rem, 9vw, 9.5rem);
+  --text-display--line-height: 0.92;
+  --text-display--letter-spacing: -0.03em;
+  --text-h1: clamp(2.5rem, 6vw, 5.5rem);
+  --text-h1--line-height: 1;
+  --text-h1--letter-spacing: -0.025em;
+  --text-h2: clamp(2rem, 4.2vw, 3.75rem);
+  --text-h2--line-height: 1.05;
+  --text-h2--letter-spacing: -0.02em;
+  --text-h3: clamp(1.375rem, 2vw, 1.75rem);
+  --text-h3--line-height: 1.2;
+  --text-h3--letter-spacing: -0.01em;
+  --text-lead: clamp(1.125rem, 1.4vw, 1.3125rem);
+  --text-lead--line-height: 1.55;
+  --text-body: 1.0625rem;
+  --text-body--line-height: 1.65;
+  --text-small: 0.875rem;
+  --text-small--line-height: 1.5;
+  --text-label: 0.75rem;
+  --text-label--line-height: 1.3;
+  --text-label--letter-spacing: 0.08em;
+
+  --radius-none: 0;
+  --radius-card: 4px;
+  --radius-chip: 999px;
+
+  --shadow-paper: 0 1px 1px rgb(14 14 16 / 0.04), 0 8px 24px -8px rgb(14 14 16 / 0.18), 0 30px 60px -30px rgb(14 14 16 / 0.25);
+  --shadow-lift: 0 2px 2px rgb(14 14 16 / 0.05), 0 18px 40px -12px rgb(14 14 16 / 0.28), 0 50px 80px -40px rgb(14 14 16 / 0.3);
+
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-press: cubic-bezier(0.76, 0, 0.24, 1);
+
+  --animate-marquee: marquee 40s linear infinite;
+  --animate-step-in: step-in 0.45s var(--ease-out) both;
+}
+
+:root {
+  --foil: linear-gradient(115deg, #8a6a1f 0%, #f4d98b 35%, #b8892b 55%, #fff1c1 70%, #9c7424 100%);
+  --gutter: clamp(16px, 4vw, 56px);
+  --section-y: clamp(96px, 14vh, 200px);
+  /* The header row, plus the offer banner when one is live (see .offer-banner). */
+  --header-row-h: 72px;
+  --banner-h: 0px;
+  --header-h: calc(var(--header-row-h) + var(--banner-h));
+  --spring: linear(
+    0,
+    0.006,
+    0.025 2.8%,
+    0.101 6.1%,
+    0.539 18.9%,
+    0.721 25.3%,
+    0.849 31.5%,
+    0.937 38.1%,
+    0.968 41.8%,
+    0.991 45.7%,
+    1.006 50.1%,
+    1.015 55%,
+    1.017 63.9%,
+    1.001 85.9%,
+    1
+  );
+  --lh-boost: 0;
+  color-scheme: light;
+}
+
+/* Hindi: Tiro for display, Mukta for body. +0.15 line-height, never letter-space Devanagari. */
+html[lang="hi"] {
+  --font-display: var(--font-tiro), var(--font-bricolage), serif;
+  --font-serif: var(--font-tiro), serif;
+  --font-sans: var(--font-mukta), var(--font-geist), system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), var(--font-mukta), ui-monospace, monospace;
+  --lh-boost: 0.15;
+  --text-display--line-height: 1.07;
+  --text-display--letter-spacing: 0;
+  --text-h1--line-height: 1.15;
+  --text-h1--letter-spacing: 0;
+  --text-h2--line-height: 1.2;
+  --text-h2--letter-spacing: 0;
+  --text-h3--line-height: 1.35;
+  --text-h3--letter-spacing: 0;
+  --text-lead--line-height: 1.7;
+  --text-body--line-height: 1.8;
+  --text-small--line-height: 1.65;
+}
+
+/* ───────────────────────── Base ───────────────────────── */
+@layer base {
+  *,
+  ::before,
+  ::after {
+    border-color: var(--color-line);
+  }
+
+  html {
+    background: var(--color-paper);
+    color: var(--color-ink);
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+    scroll-padding-top: calc(var(--header-h) + 16px);
+  }
+
+  body {
+    background: var(--color-paper);
+    font-family: var(--font-sans);
+    font-size: var(--text-body);
+    line-height: var(--text-body--line-height);
+    font-feature-settings: "ss01", "cv11";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: clip;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  ::selection {
+    background: var(--color-magenta);
+    color: var(--color-paper);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-magenta);
+    outline-offset: 2px;
+  }
+
+  button,
+  [role="button"],
+  summary {
+    cursor: pointer;
+  }
+
+  button:disabled {
+    cursor: not-allowed;
+  }
+
+  input,
+  textarea,
+  select {
+    font: inherit;
+  }
+
+  img,
+  svg,
+  video,
+  canvas {
+    display: block;
+    max-width: 100%;
+  }
+}
+
+/* ───────────────────────── Components & utilities ───────────────────────── */
+@utility container-x {
+  width: 100%;
+  max-width: 1440px;
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+@utility section-y {
+  padding-block: var(--section-y);
+}
+
+@utility grid-12 {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: clamp(12px, 1.6vw, 24px);
+}
+
+@utility label-mono {
+  font-family: var(--font-mono);
+  font-size: var(--text-label);
+  line-height: var(--text-label--line-height);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+@utility serif-accent {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+@utility text-balance {
+  text-wrap: balance;
+}
+
+@utility tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+@utility foil-text {
+  background: var(--foil);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@utility bg-foil {
+  background: var(--foil);
+}
+
+@utility outline-type {
+  /* Stroke painted under a background-coloured fill hides overlapping contours in variable fonts. */
+  -webkit-text-fill-color: var(--outline-fill, var(--color-paper));
+  -webkit-text-stroke: 3px currentColor;
+  paint-order: stroke fill;
+  transition: -webkit-text-fill-color 0.5s var(--ease-out);
+}
+
+@utility no-scrollbar {
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Devanagari must never be letter-spaced. */
+html[lang="hi"] .label-mono:lang(hi),
+html[lang="hi"] [lang="hi"].label-mono {
+  letter-spacing: 0;
+}
+
+/* Paper grain — fixed noise overlay, multiply on paper. */
+.paper-grain {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  pointer-events: none;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1.2 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+@media (pointer: fine) {
+  .paper-grain {
+    mix-blend-mode: multiply;
+  }
+}
+
+.ink-grain {
+  position: relative;
+  isolation: isolate;
+}
+
+.ink-grain::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.07;
+  mix-blend-mode: screen;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Halftone dot field used behind numbers and CTA */
+.halftone-field {
+  background-image: radial-gradient(circle, currentColor 1.4px, transparent 1.9px);
+  background-size: 14px 14px;
+}
+
+/* ───────── HalftoneReveal: images appear as growing halftone dots ───────── */
+@property --dot {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0px;
+}
+
+/* Hidden only when JS is present (html.js is set before first paint). */
+html.js .halftone-reveal:not([data-state="done"]) {
+  --dot: 0px;
+  -webkit-mask-image: radial-gradient(circle, #000 var(--dot), transparent calc(var(--dot) + 0.5px));
+  mask-image: radial-gradient(circle, #000 var(--dot), transparent calc(var(--dot) + 0.5px));
+  -webkit-mask-size: 14px 14px;
+  mask-size: 14px 14px;
+  -webkit-mask-position: center;
+  mask-position: center;
+  transition: --dot 0.9s var(--ease-out);
+}
+
+html.js .halftone-reveal[data-state="in"] {
+  --dot: 11px;
+}
+
+/* ───────── First-view effects runtime (see ScrollEffects.tsx) ───────── */
+[data-reveal] {
+  transition:
+    opacity 0.8s var(--ease-out) var(--d, 0s),
+    transform 0.8s var(--ease-out) var(--d, 0s);
+}
+
+html.js [data-reveal]:not([data-state]) {
+  opacity: 0;
+  transform: translate3d(0, var(--ry, 28px), 0);
+}
+
+[data-split] [data-word] > span {
+  display: inline-block;
+  transition: transform 0.8s var(--ease-out);
+  transition-delay: calc(var(--d, 0s) + var(--line, 0) * 0.06s);
+}
+
+html.js [data-split]:not([data-state]) [data-word] > span {
+  transform: translate3d(0, 110%, 0);
+}
+
+/* Failsafe: if the runtime never starts (script blocked), everything shows after 4s. */
+html.js:not([data-fx="on"]) :is([data-reveal], [data-split] [data-word] > span) {
+  animation: fx-show 0.01s linear 4s forwards;
+}
+html.js:not([data-fx="on"]) .halftone-reveal {
+  animation: fx-dot 0.01s linear 4s forwards;
+}
+html.js:not([data-fx="on"]) .ticker {
+  animation: fx-clip 0.01s linear 4s forwards;
+}
+@keyframes fx-show {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes fx-dot {
+  to {
+    --dot: 14px;
+  }
+}
+@keyframes fx-clip {
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+/* ───────── CMYK registration headline ───────── */
+.cmyk {
+  position: relative;
+  display: block;
+  isolation: isolate;
+}
+
+.cmyk__layer {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  user-select: none;
+  mix-blend-mode: multiply;
+  will-change: transform;
+  animation: cmyk-register 1.2s var(--spring) both;
+}
+
+.cmyk__layer--c {
+  color: var(--color-cyan);
+  --from: -8px 4px;
+  animation-delay: 0.1s;
+}
+
+.cmyk__layer--m {
+  color: var(--color-magenta);
+  --from: 6px -5px;
+  animation-delay: 0.18s;
+}
+
+.cmyk__layer--y {
+  color: var(--color-yellow);
+  --from: -4px -7px;
+  animation-delay: 0.26s;
+}
+
+.cmyk__ink {
+  position: relative;
+  color: inherit;
+}
+
+.cmyk--on-ink .cmyk__layer {
+  mix-blend-mode: screen;
+}
+
+@keyframes cmyk-register {
+  from {
+    translate: var(--from);
+  }
+  to {
+    translate: 0 0;
+  }
+}
+
+html[data-preload="on"] .cmyk__layer--c {
+  animation-delay: 1.3s;
+}
+html[data-preload="on"] .cmyk__layer--m {
+  animation-delay: 1.38s;
+}
+html[data-preload="on"] .cmyk__layer--y {
+  animation-delay: 1.46s;
+}
+
+/* ───────── Preloader (pure CSS so it never waits for hydration) ───────── */
+@counter-style pad3 {
+  system: extends decimal;
+  pad: 3 "0";
+}
+
+@property --pct {
+  syntax: "<integer>";
+  inherits: false;
+  initial-value: 0;
+}
+
+.preloader {
+  display: none;
+}
+
+html[data-preload="on"] .preloader {
+  display: block;
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  pointer-events: none;
+  animation: preloader-gone 0s linear 1.4s forwards;
+}
+
+.preloader__panel {
+  position: absolute;
+  inset: 0;
+  transform-origin: 50% 0%;
+  animation: panel-up 0.34s var(--ease-press) forwards;
+}
+
+.preloader__panel--y {
+  background: var(--color-yellow);
+  animation-delay: 1.06s;
+}
+.preloader__panel--m {
+  background: var(--color-magenta);
+  animation-delay: 1s;
+}
+.preloader__panel--c {
+  background: var(--color-cyan);
+  animation-delay: 0.94s;
+}
+.preloader__panel--k {
+  background: var(--color-ink);
+  color: var(--color-paper);
+  display: grid;
+  place-items: center;
+  animation-delay: 0.88s;
+}
+
+.preloader__mark circle,
+.preloader__mark line {
+  stroke-dasharray: 160;
+  stroke-dashoffset: 160;
+  animation: draw 0.7s var(--ease-out) 0.05s forwards;
+}
+
+.preloader__mark line {
+  animation-delay: 0.25s;
+}
+
+.preloader__bar {
+  transform-origin: 50% 100%;
+  transform: scaleY(0);
+  animation: ink-fill 0.75s var(--ease-in-out) forwards;
+}
+
+.preloader__counter::after {
+  counter-reset: pct var(--pct);
+  content: counter(pct, pad3);
+  animation: count-up 0.82s steps(100, end) forwards;
+}
+
+@keyframes panel-up {
+  to {
+    transform: scaleY(0);
+  }
+}
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes ink-fill {
+  to {
+    transform: scaleY(1);
+  }
+}
+@keyframes count-up {
+  to {
+    --pct: 100;
+  }
+}
+@keyframes preloader-gone {
+  to {
+    visibility: hidden;
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@keyframes pulse-ring {
+  0%,
+  86% {
+    transform: scale(1);
+    opacity: 0;
+  }
+  88% {
+    opacity: 0.55;
+  }
+  100% {
+    transform: scale(1.7);
+    opacity: 0;
+  }
+}
+
+@keyframes shimmer {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes wa-pop {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.96);
+  }
+}
+
+@keyframes drift {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-28px, -28px, 0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}
+@keyframes step-in {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 14px, 0);
+  }
+}
+
+/* Track page: the ink line draws down while each stage fades in after it. */
+.track-line {
+  animation: ink-fill 1.6s var(--ease-out) 0.2s both;
+  transform: scaleY(0);
+}
+.track-stage {
+  animation: step-in 0.5s var(--ease-out) calc(0.2s + var(--i, 0) * 0.12s) both;
+}
+@keyframes fade-out {
+  to {
+    opacity: 0;
+  }
+}
+@keyframes sheet-in-right {
+  from {
+    transform: translate3d(100%, 0, 0);
+  }
+}
+@keyframes sheet-out-right {
+  to {
+    transform: translate3d(100%, 0, 0);
+  }
+}
+@keyframes sheet-in-left {
+  from {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+@keyframes sheet-out-left {
+  to {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+@keyframes confetti {
+  0% {
+    opacity: 1;
+    transform: translate3d(0, -20px, 0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(var(--drift, 0px), 55vh, 0) scale(0.6);
+  }
+}
+@keyframes pop {
+  0% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1.35);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Mono spec lines typing in (clip-path steps, no width animation) */
+html.js [data-ticker]:not([data-state="done"]) .ticker {
+  clip-path: inset(0 100% 0 0);
+}
+[data-ticker][data-state="in"] .ticker {
+  animation: type calc(var(--n) * 24ms) steps(var(--n), end) var(--delay, 0ms) forwards;
+}
+@keyframes type {
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+/* Halftone dot field that ripples outward on enter */
+@property --ripple {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 0%;
+}
+.ripple-field {
+  --ripple: 0%;
+  -webkit-mask-image: radial-gradient(circle at 50% 55%, #000 var(--ripple), transparent calc(var(--ripple) + 14%));
+  mask-image: radial-gradient(circle at 50% 55%, #000 var(--ripple), transparent calc(var(--ripple) + 14%));
+  transition: --ripple 1.8s var(--ease-out);
+}
+.ripple-field[data-state="in"] {
+  --ripple: 150%;
+}
+
+.marquee-track {
+  animation: marquee var(--marquee-dur, 48s) linear infinite;
+  will-change: transform;
+}
+.marquee-track--reverse {
+  animation-direction: reverse;
+}
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+/* Skeleton with paper-grain shimmer */
+.skeleton {
+  position: relative;
+  overflow: hidden;
+  background: var(--color-paper-2);
+  border-radius: var(--radius-card);
+}
+
+.skeleton::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgb(246 243 236 / 0.7), transparent);
+  animation: shimmer 1.4s var(--ease-in-out) infinite;
+}
+
+/* Lenis */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: clip;
+}
+
+/* Custom cursor hides native cursor only where it is active */
+html[data-cursor="on"] body,
+html[data-cursor="on"] a,
+html[data-cursor="on"] button {
+  cursor: none;
+}
+html[data-cursor="on"] input,
+html[data-cursor="on"] textarea,
+html[data-cursor="on"] select {
+  cursor: text;
+}
+
+/* Sonner toasts as paper slips */
+[data-sonner-toaster] [data-sonner-toast].paper-toast {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  border: 1px solid var(--color-line);
+  border-radius: 2px;
+  box-shadow: var(--shadow-paper);
+  font-family: var(--font-sans);
+  padding: 14px 16px 14px 20px;
+  background-image: linear-gradient(90deg, var(--color-magenta) 0 4px, transparent 4px);
+}
+
+/* Reduced motion: no sliding, zooming or parallax. Gentle fades stay, and the marquee keeps
+   drifting at a slower pace so it never sits frozen and cut off at the screen edges. */
+@media (prefers-reduced-motion: reduce) {
+  *:not(.marquee-track),
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.15s !important;
+    scroll-behavior: auto !important;
+  }
+
+  .cmyk__layer {
+    animation: none;
+    translate: 0 0;
+  }
+
+  .halftone-reveal {
+    -webkit-mask-image: none !important;
+    mask-image: none !important;
+  }
+
+  [data-reveal],
+  [data-split] [data-word] > span {
+    transform: none !important;
+  }
+
+  /* Opacity-only fade-in, slow enough to read as a fade rather than a flash. */
+  [data-reveal] {
+    transition-duration: 0.6s !important;
+  }
+
+  .marquee-track {
+    animation-duration: calc(var(--marquee-dur, 48s) * 1.6);
+  }
+}
+
+/* Seasonal accents, switched in src/data/content/site.ts. */
+:root:has(.offer-banner) {
+  --banner-h: 36px;
+}
+
+.festival-rule[data-festival="diwali"] {
+  background: linear-gradient(90deg, var(--color-foil), #f4d98b, var(--color-magenta-deep), #f4d98b, var(--color-foil));
+}
+
+.festival-rule[data-festival="holi"] {
+  background: linear-gradient(90deg, var(--color-cyan), var(--color-magenta), var(--color-yellow), var(--color-green), var(--color-blue), var(--color-cyan));
+}
+
+.festival-rule[data-festival="wedding"] {
+  background: linear-gradient(90deg, var(--color-foil), #f59e0b, var(--color-red), #f59e0b, var(--color-foil));
+}
